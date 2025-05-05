@@ -1,3 +1,4 @@
+
 import { BookOpen, Chrome, FileText, Github, Link, Star, Tag, LayoutDashboard, Database } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -98,7 +99,7 @@ const Index = () => {
             <div className="rounded-lg bg-white p-6 shadow-sm">
               <h3 className="mb-4 text-xl font-semibold">Powerful Dashboard</h3>
               <img 
-                src="/lovable-uploads/8c648dfe-85ff-4aca-b57a-168f14e4b413.png" 
+                src="/lovable-uploads/16032623-10b1-4002-95b5-3f2f5c4bcff6.png" 
                 alt="GetMark Dashboard Interface" 
                 className="rounded-lg border border-gray-200" 
               />
