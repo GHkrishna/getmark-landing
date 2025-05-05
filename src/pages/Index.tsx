@@ -1,5 +1,4 @@
-
-import { BookOpen, Chrome, FileText, Firefox, Github, Link, Star } from "lucide-react";
+import { BookOpen, Chrome, FileText, Github, Link, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
@@ -179,7 +178,23 @@ const Index = () => {
                 rel="noopener noreferrer" 
                 className="inline-flex items-center gap-2 rounded-lg border-2 border-white px-6 py-3 font-medium text-white transition-transform hover:bg-white/10 hover:scale-105"
               >
-                <Firefox size={20} />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="4" />
+                  <line x1="21.17" y1="8" x2="12" y2="8" />
+                  <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+                  <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+                </svg>
                 <span>Firefox</span>
               </a>
               
