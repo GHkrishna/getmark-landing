@@ -65,6 +65,7 @@ export default {
 				},
 				getmark: {
 					red: "#FF3E30",
+					blue: "#0EA5E9", 
 					black: "#1A1A1A",
 					gray: "#8E9196",
 					light: "#F5F5F7"

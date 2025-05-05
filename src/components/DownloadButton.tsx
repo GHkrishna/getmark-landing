@@ -16,7 +16,7 @@ const DownloadButton = ({ browser, url }: DownloadButtonProps) => {
       <Button 
         variant={browser === "chrome" ? "default" : "outline"} 
         size="lg" 
-        className={`flex items-center gap-2 ${browser === "chrome" ? "bg-getmark-red hover:bg-getmark-red/90" : "border-getmark-red text-getmark-red hover:bg-getmark-red/10"}`}
+        className={`flex items-center gap-2 ${browser === "chrome" ? "bg-getmark-red hover:bg-getmark-red/90" : "border-getmark-blue text-getmark-blue hover:bg-getmark-blue/10"}`}
       >
         {browser === "chrome" ? (
           <Chrome size={18} />
