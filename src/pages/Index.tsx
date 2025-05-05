@@ -1,12 +1,29 @@
-
 import { BookOpen, Chrome, FileText, Github, Link, Star, Tag, LayoutDashboard, Database } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
 import FeatureCard from "@/components/FeatureCard";
 import StatsCard from "@/components/StatsCard";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [userBrowser, setUserBrowser] = useState<"chrome" | "firefox">("chrome");
+  
+  useEffect(() => {
+    // Detect user's browser
+    const detectBrowser = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      if (userAgent.indexOf("firefox") > -1) {
+        setUserBrowser("firefox");
+      } else {
+        // Default to Chrome for Chrome, Edge, Opera, and other Chromium-based browsers
+        setUserBrowser("chrome");
+      }
+    };
+    
+    detectBrowser();
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -24,13 +41,15 @@ const Index = () => {
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
                 <DownloadButton 
-                  browser="chrome" 
-                  url="https://chromewebstore.google.com/detail/getmark/jjigjenboocbojhbfeohoicappjobekn" 
+                  browser={userBrowser} 
+                  url={userBrowser === "chrome" 
+                    ? "https://chromewebstore.google.com/detail/getmark/jjigjenboocbojhbfeohoicappjobekn" 
+                    : "https://addons.mozilla.org/en-US/firefox/addon/getmark/"
+                  } 
                 />
-                <DownloadButton 
-                  browser="firefox" 
-                  url="https://addons.mozilla.org/en-US/firefox/addon/getmark/" 
-                />
+                <a href="#supported-browsers" className="inline-flex items-center justify-center gap-2 text-sm font-medium text-getmark-blue hover:text-getmark-blue/80 transition-colors">
+                  View all supported browsers
+                </a>
               </div>
             </div>
             <div className="relative w-full max-w-md animate-fade-in">
@@ -141,25 +160,25 @@ const Index = () => {
               
               <div className="prose prose-slate max-w-none">
                 <p>
-                  GetMark was born out of a common frustration: constantly switching between 
-                  Chrome and Firefox to add notes on GitHub profiles and repositories.
+                  We've all been there.
                 </p>
                 <p>
-                  When I first launched the Chrome extension, it was to solve my own problem—remembering 
-                  why I followed specific people or repositories on GitHub. But being primarily a Firefox 
-                  user, I found myself constantly switching browsers just to add notes!
+                  You follow someone on GitHub or LinkedIn, star a cool project, or come across a fascinating article—but a few days later, you have no idea why you saved it in the first place. Sound familiar?
                 </p>
                 <p>
-                  After sharing the extension on a forum, I was immediately met with skepticism. One user 
-                  was only willing to try it after the source code was made public. This feedback 
-                  actually led to making the project open-source, which turned out to be one of the 
-                  best decisions for the project.
+                  That's exactly the problem GetMark was built to solve.
                 </p>
                 <p>
-                  Today, GetMark is available across Chrome, Firefox, and all Chromium-based browsers 
-                  like Brave and Opera. While it started for GitHub, it now works across the entire web,
-                  letting you save and annotate any webpage you find valuable. The project is fully open-source, 
-                  welcoming contributions from the developer community.
+                  What started as a personal itch—to add quick, meaningful context to the links and profiles we interact with online—has now grown into a simple yet powerful browser extension used by developers, makers, and curious minds alike. Whether it was a post that resonated, a repo that inspired you, or a person you wanted to keep in touch with, GetMark helps you remember why.
+                </p>
+                <p>
+                  With just one click, you can tag any page, leave a short note for your future self, and later revisit it with full context—no more digging through bookmarks or wondering what caught your attention.
+                </p>
+                <p>
+                  GetMark was born out of a real workflow pain. At first, it was built just for Chrome, but as the irony would have it, the creator barely used Chrome himself. So, after some funny feedback (and a few forum skeptics), GetMark expanded to Firefox, Brave, and other Chromium-based browsers—and was proudly open-sourced for transparency and community contribution.
+                </p>
+                <p>
+                  Today, it's a growing, evolving tool made for people who love to explore, connect, and organize their digital journeys—without losing the why behind the what.
                 </p>
               </div>
             </div>
@@ -181,6 +200,81 @@ const Index = () => {
             <StatsCard value="25+" label="Active Users" icon={<Chrome size={24} />} />
             <StatsCard value="6" label="Positive Reviews" icon={<Star size={24} />} />
             <StatsCard value="4" label="GitHub Stars" icon={<Github size={24} />} />
+          </div>
+        </div>
+      </section>
+      
+      {/* Supported Browsers Section */}
+      <section id="supported-browsers" className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Supported Browsers</h2>
+            <p className="mx-auto max-w-2xl text-gray-600">
+              GetMark works across multiple browsers to enhance your browsing experience.
+            </p>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+              <Chrome size={48} className="text-getmark-red mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Chrome</h3>
+              <a href="https://chromewebstore.google.com/detail/getmark/jjigjenboocbojhbfeohoicappjobekn" 
+                className="mt-auto text-sm text-getmark-red hover:underline" target="_blank" rel="noopener noreferrer">
+                Download Now
+              </a>
+            </div>
+            
+            <div className="flex flex-col items-center bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-getmark-blue mb-4"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="21.17" y1="8" x2="12" y2="8" />
+                <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+                <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+              </svg>
+              <h3 className="text-lg font-semibold mb-2">Firefox</h3>
+              <a href="https://addons.mozilla.org/en-US/firefox/addon/getmark/" 
+                className="mt-auto text-sm text-getmark-blue hover:underline" target="_blank" rel="noopener noreferrer">
+                Download Now
+              </a>
+            </div>
+            
+            <div className="flex flex-col items-center bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+              <Chrome size={48} className="text-[#FB542B] mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Brave</h3>
+              <p className="text-center text-sm text-gray-500 mb-2">Uses Chrome extension</p>
+              <a href="https://chromewebstore.google.com/detail/getmark/jjigjenboocbojhbfeohoicappjobekn" 
+                className="mt-auto text-sm text-getmark-red hover:underline" target="_blank" rel="noopener noreferrer">
+                Download Now
+              </a>
+            </div>
+            
+            <div className="flex flex-col items-center bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+              <Chrome size={48} className="text-[#FF1B2D] mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Opera</h3>
+              <p className="text-center text-sm text-gray-500 mb-2">Uses Chrome extension</p>
+              <a href="https://chromewebstore.google.com/detail/getmark/jjigjenboocbojhbfeohoicappjobekn" 
+                className="mt-auto text-sm text-getmark-red hover:underline" target="_blank" rel="noopener noreferrer">
+                Download Now
+              </a>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-gray-600">
+              Missing your browser? <a href="mailto:waskekrishna11@gmail.com" className="text-getmark-blue hover:underline">Request support</a>
+            </p>
           </div>
         </div>
       </section>
@@ -240,6 +334,27 @@ const Index = () => {
                 <Github size={20} />
                 <span>Source Code</span>
               </a>
+            </div>
+            
+            <div className="mt-8 text-white/80">
+              <p>
+                Have a feature request or found a bug? 
+                <a 
+                  href="https://github.com/GHkrishna/Getmark/issues" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white underline ml-2 hover:text-white/90"
+                >
+                  Open an issue on GitHub
+                </a>
+                {" "}or{" "}
+                <a 
+                  href="mailto:waskekrishna11@gmail.com"
+                  className="text-white underline hover:text-white/90"
+                >
+                  email the developer
+                </a>
+              </p>
             </div>
           </div>
         </div>

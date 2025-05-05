@@ -1,5 +1,5 @@
 
-import { Github } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -21,6 +21,9 @@ const Navbar = () => {
           <a href="#story" className="text-sm font-medium text-gray-700 hover:text-getmark-blue transition-colors">
             Story
           </a>
+          <a href="#supported-browsers" className="text-sm font-medium text-gray-700 hover:text-getmark-blue transition-colors">
+            Browsers
+          </a>
           <a href="#download" className="text-sm font-medium text-gray-700 hover:text-getmark-blue transition-colors">
             Download
           </a>
@@ -35,6 +38,13 @@ const Navbar = () => {
           >
             <Github size={18} />
             <span className="hidden md:inline">GitHub</span>
+          </a>
+          <a 
+            href="mailto:waskekrishna11@gmail.com"
+            className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-getmark-blue transition-colors"
+          >
+            <Mail size={18} />
+            <span className="hidden md:inline">Contact</span>
           </a>
         </div>
       </div>

@@ -1,5 +1,5 @@
 
-import { Github } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -18,6 +18,7 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-gray-600">
             <a href="#features" className="hover:text-getmark-blue transition-colors">Features</a>
             <a href="#story" className="hover:text-getmark-blue transition-colors">Story</a>
+            <a href="#supported-browsers" className="hover:text-getmark-blue transition-colors">Browsers</a>
             <a href="#download" className="hover:text-getmark-blue transition-colors">Download</a>
             <a 
               href="https://github.com/GHkrishna/Getmark" 
@@ -27,6 +28,13 @@ const Footer = () => {
             >
               <Github size={16} />
               <span>GitHub</span>
+            </a>
+            <a 
+              href="mailto:waskekrishna11@gmail.com" 
+              className="flex items-center gap-2 hover:text-getmark-blue transition-colors"
+            >
+              <Mail size={16} />
+              <span>Contact</span>
             </a>
           </div>
         </div>
