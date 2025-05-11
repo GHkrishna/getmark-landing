@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://ghkrishna.github.io/getmark-landing/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
