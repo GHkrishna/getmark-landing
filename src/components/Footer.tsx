@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex items-center gap-2">
             <img 
-              src="/lovable-uploads/c2678d19-4c0f-498a-8432-3f39ae106b68.png" 
+              src="lovable-uploads/c2678d19-4c0f-498a-8432-3f39ae106b68.png" 
               alt="GetMark Logo" 
               className="h-8 w-auto" 
             />

@@ -55,7 +55,7 @@ const Index = () => {
             </div>
             <div className="relative w-full max-w-md animate-fade-in">
               <img 
-                src="/lovable-uploads/7adf15c3-899d-4181-9c12-d15b148de9f4.png" 
+                src="lovable-uploads/7adf15c3-899d-4181-9c12-d15b148de9f4.png" 
                 alt="GetMark Extension Interface" 
                 className="rounded-lg shadow-xl" 
               />
@@ -99,7 +99,7 @@ const Index = () => {
             <div className="rounded-lg bg-white p-6 shadow-sm">
               <h3 className="mb-4 text-xl font-semibold">Powerful Dashboard</h3>
               <img 
-                src="/lovable-uploads/16032623-10b1-4002-95b5-3f2f5c4bcff6.png" 
+                src="lovable-uploads/16032623-10b1-4002-95b5-3f2f5c4bcff6.png" 
                 alt="GetMark Dashboard Interface" 
                 className="rounded-lg border border-gray-200" 
               />
@@ -149,7 +149,7 @@ const Index = () => {
             <div className="rounded-xl bg-white p-8 shadow-sm">
               <div className="mb-6 flex items-center gap-4">
                 <img 
-                  src="/lovable-uploads/c2678d19-4c0f-498a-8432-3f39ae106b68.png" 
+                  src="lovable-uploads/c2678d19-4c0f-498a-8432-3f39ae106b68.png" 
                   alt="GetMark Logo" 
                   className="h-12 w-auto" 
                 />

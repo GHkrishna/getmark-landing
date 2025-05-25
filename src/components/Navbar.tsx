@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/c2678d19-4c0f-498a-8432-3f39ae106b68.png" 
+            src="lovable-uploads/c2678d19-4c0f-498a-8432-3f39ae106b68.png" 
             alt="GetMark Logo" 
             className="h-8 w-auto" 
           />
