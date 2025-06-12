@@ -1,5 +1,5 @@
 
-import { Github, Mail } from "lucide-react";
+import { Github, Mail, Siren } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -40,7 +40,17 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} GetMark. All rights reserved.
+          <p>© {new Date().getFullYear()} GetMark. All rights reserved. | </p>
+          
+            <a 
+              href="privacy-policy.html" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-getmark-blue transition-colors"
+            >
+              <Siren size={16} />
+              <span>Privacy Policy</span>
+            </a>
         </div>
       </div>
     </footer>
