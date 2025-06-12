@@ -36,12 +36,6 @@ const Footer = () => {
               <Mail size={16} />
               <span>Contact</span>
             </a>
-          </div>
-        </div>
-        
-        <div className="mt-8 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} GetMark. All rights reserved. | </p>
-          
             <a 
               href="privacy-policy.html" 
               target="_blank" 
@@ -51,6 +45,11 @@ const Footer = () => {
               <Siren size={16} />
               <span>Privacy Policy</span>
             </a>
+          </div>
+        </div>
+        
+        <div className="mt-8 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} GetMark. All rights reserved.
         </div>
       </div>
     </footer>
